@@ -1,8 +1,7 @@
 document.getElementById('btnBuscar').addEventListener('click', function () {
-    // Obtener el valor del input de búsqueda
+
     var busqueda = document.getElementById('inputBuscar').value;
 
-    // Hacer la solicitud a la API de la NASA
     fetch('https://images-api.nasa.gov/search?q=' + busqueda)
         .then(response => response.json())
         .then(data => mostrarImagenes(data.collection.items));
